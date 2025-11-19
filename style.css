@@ -146,7 +146,7 @@ h2.section-title {
 /* === HERO BÖLÜMÜ === */
 .hero {
     height: 90vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://rekormimarlik.com.tr/images/Yap%c4%b1-Dekorasyon.jpg');   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://rekormimarlik.com.tr/images/Yap%c4%b1-Dekorasyon.jpg');    
     
     background-position: center;
     display: flex;
@@ -436,6 +436,13 @@ h2.section-title {
     
     .about-content, .contact-content {
         flex-direction: column;
+    }
+    
+    /* 💡 MOBİL LOKASYON/HARİTA TAŞMA DÜZELTMESİ EKLENDİ */
+    .contact-form,
+    .contact-info {
+        width: 100%; /* İçeriklerin taşma yerine tam genişlik kaplamasını sağlar */
+        box-sizing: border-box;
     }
     
     .footer .container {
