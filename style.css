@@ -462,4 +462,15 @@ h2.section-title {
     h2.section-title {
         font-size: 2rem;
     }
+}@media (max-width: 768px) {
+    /* ... (Mevcut Mobil Kurallarınız) ... */
+
+    /* 💡 HARİTA TAŞMASI DÜZELTMESİ */
+    .map-placeholder iframe {
+        width: 100% !important; /* Genişliği kapsayıcının %100'üne ayarlar */
+        max-width: 100% !important; /* Taşmayı engeller */
+        height: 300px; /* Mobil için uygun bir yükseklik */
+    }
+
+    /* ... (Diğer Mobil Kurallarınız) ... */
 }
