@@ -226,7 +226,23 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
     
-    <script src="script.js"></script>
+    <script src="script.js"></script><script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Burger butonuna tıklandığında çalışacak fonksiyon
+    const navToggle = () => {
+        // 1. Menüyü Aç/Kapat (nav-active sınıfını ekle/kaldır)
+        nav.classList.toggle('nav-active');
+
+        // 2. Burger simgesini animasyonlu hale getir (toggle sınıfını ekle/kaldır)
+        burger.classList.toggle('toggle');
+    };
+
+    // Dinleyiciyi ata
+    burger.addEventListener('click', navToggle);
+</script>
 
 </body>
 </html>
