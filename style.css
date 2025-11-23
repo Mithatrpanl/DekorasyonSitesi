@@ -386,7 +386,8 @@ h2.section-title {
 }
 
 /* === RESPONSIVE (MOBİL) TASARIM === */
-@media (max-width: 768px) {
+@media (max-width: 768px) {/* ==================================== */
+
     .nav-menu {
         position: fixed;
         top: 80px; /* Navbar yüksekliği kadar */
