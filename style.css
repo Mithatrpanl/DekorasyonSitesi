@@ -146,7 +146,7 @@ h2.section-title {
 /* === HERO BÖLÜMÜ === */
 .hero {
     height: 90vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://rekormimarlik.com.tr/images/Yap%c4%b1-Dekorasyon.jpg');    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://firmarehberajansi.com/img/information_items_1991.jpg');
     
     background-position: center;
     display: flex;
@@ -154,7 +154,9 @@ h2.section-title {
     align-items: center;
     text-align: center;
     color: var(--light-color);
-    padding: 0 20px;
+    padding: 0 20px;background-size: contain;   /* Görselin tamamının görünmesini sağlar */
+    background-repeat: no-repeat; /* EN ÖNEMLİSİ: Tekrar etmesini engeller *//* GÖRSELİN TÜM ALANI KAPLAMASI İÇİN BU AYAR ÇOK ÖNEMLİ: */
+    background-size: cover;
 }
 
 .hero-content h1 {
@@ -311,6 +313,8 @@ h2.section-title {
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
 }
+
+
 
 .contact-info h3 {
     font-size: 1.6rem;
