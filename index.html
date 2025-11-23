@@ -237,23 +237,36 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
     
-    <script src="script.js"></script><script>
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-menu');
-    const navLinks = document.querySelector('.nav-links');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-menu');
+        // Tüm menü linklerini seçiyoruz
+        const navLinks = document.querySelectorAll('.nav-links a'); 
 
-    // Burger butonuna tıklandığında çalışacak fonksiyon
-    const navToggle = () => {
-        // 1. Menüyü Aç/Kapat (nav-active sınıfını ekle/kaldır)
-        nav.classList.toggle('nav-active');
+        // Burger butonuna tıklandığında menüyü açma/kapama fonksiyonu
+        const navToggle = () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        };
 
-        // 2. Burger simgesini animasyonlu hale getir (toggle sınıfını ekle/kaldır)
-        burger.classList.toggle('toggle');
-    };
+        // 1. Dinleyiciyi burger butonuna ata
+        burger.addEventListener('click', navToggle);
 
-    // Dinleyiciyi ata
-    burger.addEventListener('click', navToggle);
-</script>
+        // 2. YENİ EKLEME: Linklere tıklandığında menüyü kapat
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Linke tıklandığında menüyü ve burger ikonunu kapat
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            });
+        });
+    </script>
+
+</body>
+</html>
 
 </body>
 </html>
