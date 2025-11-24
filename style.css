@@ -473,4 +473,74 @@ h2.section-title {
     }
 
     /* ... (Diğer Mobil Kurallarınız) ... */
+}/* === YENİ İLETİŞİM BİLGİLERİ DÜZENLEMESİ === */
+
+/* Detayların hizalanması */
+.contact-info .detail-item {
+    display: flex; /* İkon ve metni yan yana hizalar */
+    align-items: flex-start; 
+    margin-bottom: 15px;
+}
+
+/* Metin ve link stilleri */
+.contact-info .detail-item p,
+.contact-info .detail-item a {
+    margin: 0; 
+    color: var(--dark-color); /* Metin rengini daha okunaklı yapar */
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+.contact-info .detail-item a:hover {
+    color: var(--primary-color);
+}
+
+/* İkon stilleri */
+.contact-info .detail-item i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 25px; 
+    text-align: center;
+    padding-top: 2px;
+}
+
+/* Instagram Kutusu Stili */
+.social-link-box {
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Instagram Butonu Stili (Instagram'ın kendi renklerini kullanarak şık bir gradient) */
+.instagram-btn {
+    display: inline-block;
+    /* Instagram Gradient renkleri */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: var(--light-color);
+    padding: 12px 30px;
+    border-radius: 8px; /* Köşeleri yuvarlama */
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-btn i {
+    margin-right: 10px;
+}
+
+/* Harita Taşıma ve Şekil Düzeltmesi (Daha önceki sorun için kesin çözüm) */
+.map-container iframe {
+    width: 100% !important; 
+    max-width: 100% !important;
+    height: 300px; /* Sabit yükseklik */
+    border-radius: 8px; 
+    margin-top: 20px;
 }
