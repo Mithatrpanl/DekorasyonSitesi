@@ -90,6 +90,8 @@ h2.section-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* LOGO VE YAZIYI TAM SOLA KAYDIRMAK İÇİN BU KURALI EKLEYİN */
+    padding-left: 0; 
 }
 
 .logo {
@@ -99,13 +101,13 @@ h2.section-title {
     gap: 5px; /* Resim ile yazı arasına 10px boşluk koyar */
 }
 .logo img {
-    height: 50px; 
+    height: 80px; 
     width: auto;
 }
 .logo span {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem; /* Yazı boyutu */
-    font-weight: 600; /* Yazı kalınlığı */
+    font-size: 1.7rem; /* Yazı boyutu */
+    font-weight: 500; /* Yazı kalınlığı */
     color: var(--primary-color); /* Ana mavi renk */
 }
 
