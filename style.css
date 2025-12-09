@@ -644,14 +644,14 @@ h2.section-title {
     height: 60px;
     background-color: #25D366;
     color: #fff;
-    border-radius: 50%;
+    border-radius: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
+    font-size: 30px;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 1000;
     transition: 0.3s ease;
 }
 
@@ -756,4 +756,36 @@ h2.section-title {
         margin: 0;
         flex-shrink: 0;
     }
+}/* === CTA BÖLÜMÜ STİLİ (#cta) === */
+.cta-background {
+    background-color: var(--primary-color); 
+    text-align: center;
+    padding: 60px 0;
+    color: var(--light-color); 
+}
+
+.cta-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.cta-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Butonu özelleştirme */
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: 2px solid var(--light-color); /* Beyaz kenarlık */
+    background-color: transparent; /* Arka planı şeffaf yap */
+    color: var(--light-color); /* Yazı rengi beyaz */
+    transition: all 0.3s ease;
+}
+
+.btn-large:hover {
+    background-color: var(--light-color); /* Hover'da beyaza dönsün */
+    color: var(--primary-color); /* Yazı maviye dönsün */
 }
