@@ -2,9 +2,9 @@
 :root {
     --primary-color: #004a99; /* Profesyonel Mavi */
     --secondary-color: #f4f7f6; /* Çok Açık Gri Arka Plan */
-    --dark-color: #333;
+    --dark-color: #222; /* Daha koyu, daha keskin metin rengi */
     --light-color: #fff;
-    --grey-text: #666;
+    --grey-text: #555; /* Daha az solgun gövde metni */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -19,7 +19,8 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    /* Roboto'dan Poppins'e değiştirildi */
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
     background-color: var(--light-color);
@@ -73,8 +74,8 @@ h2.section-title {
 
 /* === HEADER / NAVBAR === */
 .navbar {
-    background-color: var(--secondary-color); /* Rengi bir tık koyu yaptık */
-    padding: 8px 0; /* Üst ve alt boşluğu daralttık */
+    background-color: var(--secondary-color);
+    padding: 8px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -90,15 +91,14 @@ h2.section-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* LOGO VE YAZIYI TAM SOLA KAYDIRMAK İÇİN BU KURALI EKLEYİN */
     padding-left: 0; 
 }
 
 .logo {
-    display: flex; /* Resmi ve yazıyı yan yana hizalar */
-    align-items: center; /* Dikey olarak ortalar */
-    text-decoration: none; /* Link alt çizgisini kaldırır */
-    gap: 5px; /* Resim ile yazı arasına 10px boşluk koyar */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
 }
 .logo img {
     height: 80px; 
@@ -106,9 +106,9 @@ h2.section-title {
 }
 .logo span {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.7rem; /* Yazı boyutu */
-    font-weight: 500; /* Yazı kalınlığı */
-    color: var(--primary-color); /* Ana mavi renk */
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--primary-color);
 }
 
 .nav-menu ul {
@@ -117,7 +117,7 @@ h2.section-title {
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .nav-links a {
@@ -149,15 +149,14 @@ h2.section-title {
 .hero {
     height: 90vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://firmarehberajansi.com/img/information_items_1991.jpg');
-    
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--light-color);
-    padding: 0 20px;background-size: contain;   /* Görselin tamamının görünmesini sağlar */
-    background-repeat: no-repeat; /* EN ÖNEMLİSİ: Tekrar etmesini engeller *//* GÖRSELİN TÜM ALANI KAPLAMASI İÇİN BU AYAR ÇOK ÖNEMLİ: */
+    padding: 0 20px;
+    background-repeat: no-repeat; 
     background-size: cover;
 }
 
@@ -167,8 +166,16 @@ h2.section-title {
 }
 
 .hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
+    font-size: 1.4rem; 
+    margin-bottom: 35px;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content .btn-primary {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
 /* === HAKKIMIZDA BÖLÜMÜ === */
@@ -209,6 +216,7 @@ h2.section-title {
 .about-text ul li {
     margin-bottom: 10px;
     font-size: 1.1rem;
+    color: var(--grey-text); /* Yeni renk */
 }
 
 .about-text ul li i {
@@ -216,7 +224,68 @@ h2.section-title {
     margin-right: 10px;
 }
 
+/* === SÜRECİMİZ BÖLÜMÜ (YENİ) === */
+.process-section {
+    background-color: var(--light-color);
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    padding-top: 50px;
+}
+
+/* Adımlar arasındaki çizgiyi ekler */
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 75px;
+    left: 50px;
+    right: 50px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    z-index: 1;
+}
+
+.step-card {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Kartların çizginin üstünde kalmasını sağlar */
+    background-color: var(--light-color);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 15px;
+    border: 5px solid var(--light-color); 
+    box-shadow: 0 0 0 2px var(--primary-color); /* Halka efekti */
+}
+
+.step-card h3 {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+}
+
+.step-card p {
+    color: var(--grey-text);
+}
+/* === SÜRECİMİZ BÖLÜMÜ SONU === */
+
+
 /* === HİZMETLER BÖLÜMÜ === */
+.services-section {
+    background-color: var(--secondary-color); /* Süreç bölümünden sonra arkaplanı ayarla */
+}
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -237,10 +306,24 @@ h2.section-title {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.service-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+/* HİZMET İKONLARI DÜZELTME VE MODERNLEŞTİRME */
+.service-card .service-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; 
+    height: 80px;
+    margin: 0 auto 20px;
+    font-size: 2.5rem;
+    color: var(--light-color); 
+    background-color: var(--primary-color); 
+    border-radius: 50%; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.05) rotate(5deg); 
 }
 
 .service-card h3 {
@@ -252,9 +335,10 @@ h2.section-title {
     color: var(--grey-text);
 }
 
+
 /* === GALERİ BÖLÜMÜ === */
 #gallery {
-    background-color: var(--secondary-color);
+    background-color: var(--light-color); /* Hizmetler bölümünden sonra arkaplanı ayarla */
 }
 
 .gallery-grid {
@@ -275,12 +359,159 @@ h2.section-title {
 .gallery-item img:hover {
     transform: scale(1.05);
 }
+/* === MÜŞTERİ GÖRÜŞLERİ BÖLÜMÜ === */
+#testimonials {
+    background-color: var(--secondary-color); /* Hafif gri arka plan (daha iyi görünürlük) */
+}
 
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: var(--light-color); /* Beyaz kartlar */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow); /* Hafif gölge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Birincil renk ile vurgu (Google kartlarına benzer) */
+    border-top: 5px solid var(--primary-color); 
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card .rating {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: orange; /* Yıldızlar için renk */
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.testimonial-card .client-info {
+    padding-top: 15px;
+    border-top: 1px solid #eee; /* İnce bir ayırıcı çizgi */
+}
+
+.testimonial-card .client-info h4 {
+    margin-bottom: 3px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.testimonial-card .client-info span {
+    font-size: 0.9rem;
+    color: var(--grey-text);
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}/* === BLOG BÖLÜMÜ STİLLERİ === */
+#blog {
+    background-color: var(--secondary-color); /* Hafif gri arka plan (daha iyi görünürlük) */
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: var(--light-color);
+    border-radius: 10px;
+    overflow: hidden; /* Resmin karttan taşmasını engeller */
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-meta {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--grey-text);
+    margin-bottom: 10px;
+}
+
+.blog-meta i {
+    color: var(--primary-color); /* İkon rengi */
+    margin-right: 5px;
+}
+
+.blog-content h3 {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.blog-content p {
+    color: #555; /* Yorum metni koyuluğu */
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #003366;
+}
+
+.read-more i {
+    margin-left: 5px;
+    transition: margin-left 0.3s ease;
+}
+
+.read-more:hover i {
+    margin-left: 10px;
+}
+
+/* Mobil Uyum (Responsive) */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
 /* === İLETİŞİM BÖLÜMÜ === */
+.contact-section {
+    background-color: var(--secondary-color); /* Galeri bölümünden sonra arkaplanı ayarla */
+}
 .contact-content {
     display: flex;
     gap: 40px;
-    background: var(--light-color);
+    background: var(--light-color); /* Form ve info için arka planı hafiflet */
     padding: 40px;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -292,7 +523,7 @@ h2.section-title {
 
 .contact-info {
     flex: 1;
-    background: var(--secondary-color);
+    background: var(--secondary-color); /* İletişim bilgileri kutusunu açık gri yap */
     padding: 30px;
     border-radius: 8px;
 }
@@ -313,36 +544,76 @@ h2.section-title {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Poppins kullanıldı */
 }
-
-
 
 .contact-info h3 {
     font-size: 1.6rem;
     color: var(--primary-color);
 }
 
-.contact-info p {
+/* İLETİŞİM BİLGİLERİ HİZALAMA DÜZELTMESİ */
+.contact-info .detail-item {
+    display: flex; 
+    align-items: flex-start; 
     margin-bottom: 15px;
-    color: var(--grey-text);
 }
 
-.contact-info p i {
+.contact-info .detail-item p,
+.contact-info .detail-item a {
+    margin: 0; 
+    color: var(--dark-color); 
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+.contact-info .detail-item a:hover {
     color: var(--primary-color);
-    margin-right: 10px;
-    width: 20px;
+}
+
+.contact-info .detail-item i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 25px; 
+    text-align: center;
+    padding-top: 2px;
+}
+
+/* Instagram Kutusu Stili */
+.social-link-box {
+    margin-top: 30px; 
+    margin-bottom: 30px;
     text-align: center;
 }
 
-.map-placeholder {
-    height: 150px;
-    background: #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    color: var(--grey-text);
+/* Instagram Butonu Stili */
+.instagram-btn {
+    display: inline-block;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: var(--light-color);
+    padding: 12px 30px;
+    border-radius: 8px; 
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.instagram-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+.instagram-btn i {
+    margin-right: 10px;
+}
+
+/* Harita Taşıma ve Şekil Düzeltmesi */
+.map-container iframe {
+    width: 100% !important; 
+    max-width: 100% !important;
+    height: 300px; 
+    border-radius: 8px; 
     margin-top: 20px;
 }
 
@@ -356,7 +627,7 @@ h2.section-title {
 
 .footer .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
     align-items: center;
 }
 
@@ -364,35 +635,37 @@ h2.section-title {
     color: #ccc;
 }
 
-.social-links a {
-    color: var(--light-color);
+/* === WHATSAPP BUTON CSS'i === */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
     text-decoration: none;
-    font-size: 1.2rem;
-    margin-left: 15px;
-    transition: color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: 0.3s ease;
 }
 
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-/* === ANİMASYONLAR === */
-.fade-in {
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
 }
 
 /* === RESPONSIVE (MOBİL) TASARIM === */
-@media (max-width: 768px) {/* ==================================== */
+@media (max-width: 768px) {
 
     .nav-menu {
         position: fixed;
-        top: 80px; /* Navbar yüksekliği kadar */
+        top: 80px; 
         right: 0;
         height: calc(100vh - 80px);
         width: 60%;
@@ -445,10 +718,9 @@ h2.section-title {
         flex-direction: column;
     }
     
-    /* 💡 MOBİL LOKASYON/HARİTA TAŞMA DÜZELTMESİ EKLENDİ */
     .contact-form,
     .contact-info {
-        width: 100%; /* İçeriklerin taşma yerine tam genişlik kaplamasını sağlar */
+        width: 100%; 
         box-sizing: border-box;
     }
     
@@ -464,85 +736,24 @@ h2.section-title {
     h2.section-title {
         font-size: 2rem;
     }
-}@media (max-width: 768px) {
-    /* ... (Mevcut Mobil Kurallarınız) ... */
 
-    /* 💡 HARİTA TAŞMASI DÜZELTMESİ */
-    .map-placeholder iframe {
-        width: 100% !important; /* Genişliği kapsayıcının %100'üne ayarlar */
-        max-width: 100% !important; /* Taşmayı engeller */
-        height: 300px; /* Mobil için uygun bir yükseklik */
+    /* Süreç Bölümü Mobil */
+    .process-steps {
+        flex-direction: column;
+        padding-top: 0;
     }
-
-    /* ... (Diğer Mobil Kurallarınız) ... */
-}/* === YENİ İLETİŞİM BİLGİLERİ DÜZENLEMESİ === */
-
-/* Detayların hizalanması */
-.contact-info .detail-item {
-    display: flex; /* İkon ve metni yan yana hizalar */
-    align-items: flex-start; 
-    margin-bottom: 15px;
-}
-
-/* Metin ve link stilleri */
-.contact-info .detail-item p,
-.contact-info .detail-item a {
-    margin: 0; 
-    color: var(--dark-color); /* Metin rengini daha okunaklı yapar */
-    text-decoration: none; 
-    transition: color 0.3s ease;
-}
-
-.contact-info .detail-item a:hover {
-    color: var(--primary-color);
-}
-
-/* İkon stilleri */
-.contact-info .detail-item i {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-right: 15px;
-    width: 25px; 
-    text-align: center;
-    padding-top: 2px;
-}
-
-/* Instagram Kutusu Stili */
-.social-link-box {
-    margin-top: 30px; 
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Instagram Butonu Stili (Instagram'ın kendi renklerini kullanarak şık bir gradient) */
-.instagram-btn {
-    display: inline-block;
-    /* Instagram Gradient renkleri */
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    color: var(--light-color);
-    padding: 12px 30px;
-    border-radius: 8px; /* Köşeleri yuvarlama */
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.instagram-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-.instagram-btn i {
-    margin-right: 10px;
-}
-
-/* Harita Taşıma ve Şekil Düzeltmesi (Daha önceki sorun için kesin çözüm) */
-.map-container iframe {
-    width: 100% !important; 
-    max-width: 100% !important;
-    height: 300px; /* Sabit yükseklik */
-    border-radius: 8px; 
-    margin-top: 20px;
+    .process-steps::before {
+        display: none; /* Mobil görünümde çizgiyi kaldır */
+    }
+    .step-card {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .step-number {
+        margin: 0;
+        flex-shrink: 0;
+    }
 }
