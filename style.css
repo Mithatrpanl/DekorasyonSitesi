@@ -72,10 +72,18 @@ h2.section-title {
     transform: translateY(-2px);
 }
 
-/* === HEADER / NAVBAR === */
+/* === HEADER / NAVBAR YENİ STİLİ (LOGOYU SOLA YASLAMA) === */
 .navbar {
     background-color: var(--secondary-color);
-    padding: 8px 0;
+    
+    /* Logoyu sola, menüyü sağa itmek için yeni eklenen kurallar */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    
+    /* YENİ PADİNG: Logo ve menünün sitenin geri kalanıyla hizalanmasını sağlar. */
+    padding: 8px 20px; /* .container padding'i ile aynı değer */
+    
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -87,18 +95,16 @@ h2.section-title {
     box-shadow: var(--shadow);
 }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0; 
-}
+/* ESKİ .navbar .container STİLİ ARTIK KALDIRILDI */
+
 
 .logo {
     display: flex;
     align-items: center;
     text-decoration: none;
     gap: 5px;
+    margin: 0; 
+    padding: 0;
 }
 .logo img {
     height: 80px; 
@@ -114,23 +120,39 @@ h2.section-title {
 .nav-menu ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links li {
-    margin-left: 10px;
+/* === ANA NAVİGASYON LİNKLERİ MİNİMALİST RENK GEÇİŞİ STİLİ === */
+.nav-links li a {
+    font-size: 0.95rem; /* Yazı boyutu küçültüldü */
+    font-weight: 500; 
+    
+    /* Varsayılan Renk ve Opaklık */
+    color: var(--dark-color); 
+    opacity: 0.7; /* Normalde %70 görünürlükte kalsın */
+    
+    padding: 10px 18px; 
+    transition: opacity 0.3s ease, color 0.3s ease; /* Renk ve opaklık geçişi */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none; 
+    
+    /* Önceki stillerden kalan temizlikler */
+    border: none !important; 
+    background-color: transparent !important;
+    border-radius: 0 !important;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease;
+/* Hover Stili: Vurgu için rengi ana renk yap ve opaklığı kaldır */
+.nav-links li a:hover,
+.nav-links li a.active {
+    opacity: 1; /* Tam görünürlük */
+    color: var(--primary-color); /* Ana renge dönme */
+    background-color: transparent !important; 
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
 
 .burger {
     display: none;
@@ -662,6 +684,10 @@ h2.section-title {
 
 /* === RESPONSIVE (MOBİL) TASARIM === */
 @media (max-width: 768px) {
+    /* Navbar'ı mobilde tam genişlikte tutmak için padding'i de ayarla */
+    .navbar {
+        padding: 8px 10px; /* Kenarlardan daha az boşluk bırakıldı */
+    }
 
     .nav-menu {
         position: fixed;
@@ -682,13 +708,28 @@ h2.section-title {
     .nav-links {
         flex-direction: column;
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
     
     .nav-links li {
-        margin: 20px 0;
+        margin: 0;
     }
     
+    /* Mobil Menü Linkleri */
+    .nav-links li a {
+        padding: 15px 10px; 
+        display: block; /* Linkin tüm alanı kaplamasını sağlar */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Yatay ayırıcı */
+    }
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .nav-links li a:hover {
+        background-color: var(--secondary-color) !important;
+        color: var(--primary-color) !important;
+    }
+
     .burger {
         display: block;
     }
@@ -756,7 +797,8 @@ h2.section-title {
         margin: 0;
         flex-shrink: 0;
     }
-}/* === CTA BÖLÜMÜ STİLİ (#cta) === */
+}
+/* === CTA BÖLÜMÜ STİLİ (#cta) === */
 .cta-background {
     background-color: var(--primary-color); 
     text-align: center;
