@@ -889,4 +889,79 @@ h2.section-title {
 .faq-answer p {
     margin: 0;
 }
-/* === FAQ BÖLÜMÜ STİLİ SONU === */
+/* === FAQ BÖLÜMÜ STİLİ SONU === *//* === YENİ EK: BÖLGESEL HİZMET KARTLARI STİLİ (#regions) === */
+
+.regions-section {
+    background-color: var(--light-color); 
+}
+
+.regions-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: var(--grey-text);
+    font-size: 1.1rem;
+}
+
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.region-card {
+    background: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.region-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.region-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.region-card h3 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.region-card p {
+    color: var(--grey-text);
+    margin-bottom: 20px;
+}
+
+/* Bölgesel Buton Stili (Ana butonun bir varyantı) */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: translateY(-1px);
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .regions-description {
+        margin-bottom: 30px;
+    }
+}
