@@ -825,9 +825,68 @@ h2.section-title {
     background-color: transparent; /* Arka planı şeffaf yap */
     color: var(--light-color); /* Yazı rengi beyaz */
     transition: all 0.3s ease;
+}/* === SIKÇA SORULAN SORULAR (FAQ) BÖLÜMÜ STİLİ === */
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.btn-large:hover {
-    background-color: var(--light-color); /* Hover'da beyaza dönsün */
-    color: var(--primary-color); /* Yazı maviye dönsün */
+.faq-item {
+    background: var(--light-color);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
 }
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    display: block;
+    padding: 20px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    cursor: pointer;
+    list-style: none; /* Varsayılan ok simgesini kaldır */
+    position: relative;
+}
+
+/* Kendi açma/kapama ok simgemizi ekle */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+.faq-question::after {
+    content: '\f078'; /* Chevron-down (Font Awesome) */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-question::after {
+    content: '\f077'; /* Chevron-up (Font Awesome) - Açıkken simgeyi değiştirir*/
+    transform: rotate(180deg);
+}
+
+.faq-question i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.faq-answer {
+    padding: 0 25px 20px 50px; /* Soru ikonuna göre içerden başla */
+    border-top: 1px solid #f0f0f0;
+    margin-top: -1px; /* Üstteki çizginin tam oturmasını sağlar */
+    color: var(--grey-text);
+}
+
+.faq-answer p {
+    margin: 0;
+}
+/* === FAQ BÖLÜMÜ STİLİ SONU === */
